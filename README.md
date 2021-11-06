@@ -10,6 +10,8 @@ It measures:
 
 It takes host pool autoscaling under consideration so there has to be at least one host available in the pool (alert on 0 hosts) and the session usage percentage is measured depending how many hosts is online.
 Session usage will show warning status when 75% capacity has been reached and down status when 95%
+Technically, this should never happen if you have autoscaling setup properly so it would have powered on additional host but you never know, hence the monitoring.
+This will also alert when there's no more hosts to power on and total session limit has been almost reached 
 
 All pre-requisites and syntax are described in the script's comments
 
