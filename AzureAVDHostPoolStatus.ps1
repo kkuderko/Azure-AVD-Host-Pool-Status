@@ -1,24 +1,4 @@
 <#
-Pre-requisites:
-On the PRTG server install Azure PowerShell
-
- Install-Module Az
-
-Check if installation succeeded
-
- Get-command *AzAccount* -Module *Az*
-
-If Az module fails to install, check for TLS 1.2 support
-
- [Net.ServicePointManager]::SecurityProtocol
-
-Should display Tls, Tls11, Tls12, Tls13 - if not add the below registry
-
- Set-ItemProperty -Path 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\.NetFramework\v4.0.30319' -Name 'SchUseStrongCrypto' -Value '1' -Type DWord
- Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NetFramework\v4.0.30319' -Name 'SchUseStrongCrypto' -Value '1' -Type DWord
-
-Azure username/password auth has been removed from Azure PowerShell so use service principals https://docs.microsoft.com/en-us/powershell/azure/authenticate-azureps?view=azps-6.6.0
-Basically, add new app registration in Azure, grant it Reader role to your subscription and use app secret to connect in the script
 
 Command line syntax
 
