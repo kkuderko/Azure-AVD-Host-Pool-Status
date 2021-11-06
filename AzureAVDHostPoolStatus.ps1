@@ -8,7 +8,7 @@ Check if installation succeeded
 
  Get-command *AzAccount* -Module *Az*
 
-Check for TLS 1.2 support
+If Az module fails to install, check for TLS 1.2 support
 
  [Net.ServicePointManager]::SecurityProtocol
 
