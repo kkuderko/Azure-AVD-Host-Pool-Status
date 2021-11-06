@@ -17,4 +17,4 @@ All pre-requisites and syntax are described in the script's comments
 Place the script in C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\EXEXML\ on the probe server
 and add it as sensor "EXE/Script Advanced" with the Parameters like:
 > ###### -AppID "12345678-1234-1234-1234-123456789012" -AppSecret "J^27dFTEoLSB67hs0IL" -TenantID "12345678-1234-1234-1234-123456789012" -Subscription "12345678-1234-1234-1234-1234567890121" -HostPool "AVD-Production" -ResourceGroup "AzureVirtualDesktop-RG"
-
+![](https://github.com/kkuderko/Azure-AVD-Host-Pool-Status/blob/main/img01.png)
