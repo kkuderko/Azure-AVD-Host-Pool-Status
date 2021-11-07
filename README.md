@@ -13,7 +13,7 @@ Session usage will show warning status when 75% capacity has been reached and do
 Technically, this should never happen if you have autoscaling setup properly so it would have powered on additional host but you never know, hence the monitoring.
 This will also alert when there's no more hosts to power on and total session limit has been almost reached 
 
-You could use the script interactively, to simply report the status in the PowerShell like:
+You could use the script []() interactively, to simply report the status in the PowerShell like:
 
 ![](https://github.com/kkuderko/Azure-AVD-Host-Pool-Status/blob/main/img03.png)
 
