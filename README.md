@@ -41,7 +41,7 @@ Should display Tls, Tls11, Tls12, Tls13 - if not add the below registry
 
 Azure username/password auth has been removed from Azure PowerShell so use service principals https://docs.microsoft.com/en-us/powershell/azure/authenticate-azureps?view=azps-6.6.0
 
-Basically, add new app registration in Azure, grant it Reader role to your subscription and use app secret to connect in the script
+Basically, add new app registration in Azure, grant it Reader role to your subscription and use app secret in the sensor parameters to connect script to Azure
 
 ## Sensor installation
 Place the script [AzureAVDHostPoolStatus.ps1](https://github.com/kkuderko/Azure-AVD-Host-Pool-Status/blob/main/AzureAVDHostPoolStatus.ps1) in C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\EXEXML\ on the probe server
