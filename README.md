@@ -13,7 +13,13 @@ Session usage will show warning status when 75% capacity has been reached and do
 Technically, this should never happen if you have autoscaling setup properly so it would have powered on additional host but you never know, hence the monitoring.
 This will also alert when there's no more hosts to power on and total session limit has been almost reached 
 
-## Pre-requisites
+You could use the script interactively, to simply report the status in the PowerShell like:
+
+![](https://github.com/kkuderko/Azure-AVD-Host-Pool-Status/blob/main/img03.png)
+
+or automate it as PRTG sensor below:
+
+## Pre-requisites for PRTG server
 
 On the PRTG server install Azure PowerShell
 
@@ -37,7 +43,7 @@ Azure username/password auth has been removed from Azure PowerShell so use servi
 
 Basically, add new app registration in Azure, grant it Reader role to your subscription and use app secret to connect in the script
 
-## Installation
+## Sensor installation
 Place the script in C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\EXEXML\ on the probe server
 and add it as sensor "EXE/Script Advanced" with the Parameters like:
 > ###### -AppID "12345678-1234-1234-1234-123456789012" -AppSecret "J^27dFTEoLSB67hs0IL" -TenantID "12345678-1234-1234-1234-123456789012" -Subscription "12345678-1234-1234-1234-1234567890121" -HostPool "AVD-Production" -ResourceGroup "AzureVirtualDesktop-RG"
