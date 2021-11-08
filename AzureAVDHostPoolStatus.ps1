@@ -51,7 +51,7 @@ $XMLResult = @"
  </result>
 
  <result>
-  <channel>Total Hosts in the Pool</channel>
+  <channel>Total Hosts</channel>
   <value>$TotalAVDHosts</value>
  </result>
 
@@ -61,7 +61,7 @@ $XMLResult = @"
  </result>
 
  <result>
-  <channel>Session Limit</channel>
+  <channel>Sessions Allowed</channel>
   <value>$CurrentSessionLimit</value>
  </result>
 
