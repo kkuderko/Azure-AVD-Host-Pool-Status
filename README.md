@@ -52,3 +52,5 @@ and add it as sensor "EXE/Script Advanced" with the Parameters like:
 ![](https://github.com/kkuderko/Azure-AVD-Host-Pool-Status/blob/main/img01.png)
 
 ![](https://github.com/kkuderko/Azure-AVD-Host-Pool-Status/blob/main/img02.png)
+
+![](https://github.com/kkuderko/Azure-AVD-Host-Pool-Status/blob/main/img04.png)
