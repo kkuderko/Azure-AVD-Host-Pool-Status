@@ -15,6 +15,7 @@ Example PRTG parameters syntax
 #$ErrorActionPreference = 'silentlycontinue'
 param ($AppID,$AppSecret,$TenantID,$Subscription,$HostPool,$ResourceGroup)
 $AvailableHosts = 0
+$DrainModeHosts = 0
 
 # Azure connect
 Disable-AzContextAutosave | Out-Null
@@ -31,8 +32,11 @@ $TotalAVDSessions = ($AVDHostList | Select-Object Session | Measure-Object -Prop
 $HostPoolSessionLimit = (Get-AzWvdHostPool -ResourceGroupName $ResourceGroup -Name $HostPool).MaxSessionLimit
 
 foreach ($AVDHost in $AVDHostList){
-	if ($AVDHost.Status -eq "Available") {
+	if ($AVDHost.Status -like "Available" -And $AVDHost.AllowNewSession -like "True") {
 		$AvailableHosts ++
+	}
+	if ($AVDHost.Status -like "Available" -And $AVDHost.AllowNewSession -like "False") {
+		$DrainModeHosts ++
 	}
 }
 
@@ -47,6 +51,13 @@ $XMLResult = @"
   <channel>Hosts Available</channel>
   <value>$AvailableHosts</value>
   <LimitMinError>0.1</LimitMinError>
+  <LimitMode>1</LimitMode>
+ </result>
+
+ <result>
+  <channel>Hosts in drain mode</channel>
+  <value>$DrainModeHosts</value>
+  <LimitMaxWarning>0.1</LimitMaxWarning>
   <LimitMode>1</LimitMode>
  </result>
 
