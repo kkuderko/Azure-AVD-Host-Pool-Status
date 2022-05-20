@@ -5,13 +5,15 @@ PowerShell script which can be used to display the AVD Host Pool status or creat
 It measures:
 - number of active sessions
 - how many hosts is available
+- (new) how many hosts in drain mode
 - what is the current session limit
 - what is the current session usage (%)
 
 It takes host pool autoscaling under consideration so there has to be at least one host available in the pool (alert on 0 hosts) and the session usage percentage is measured depending how many hosts is online.
 Session usage will show warning status when 75% capacity has been reached and down status when 95%.
 Technically, this should never happen if you have autoscaling setup properly so it would have powered on additional host but you never know, hence the monitoring.
-This will also alert when there's no more hosts to power on and total session limit has been almost reached 
+This will also alert when there's no more hosts to power on and total session limit has been almost reached.
+The sensor will also display warning if any of the hosts is in a drain mode.
 
 You could use the script [AzureAVDHostPoolStatus-cmd.ps1](https://github.com/kkuderko/Azure-AVD-Host-Pool-Status/blob/main/AzureAVDHostPoolStatus-cmd.ps1) interactively, to simply report the status in the PowerShell like:
 
